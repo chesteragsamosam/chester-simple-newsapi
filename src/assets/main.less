@@ -1,0 +1,130 @@
+@import 'variables';
+
+
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #eee;
+}
+
+input, select {
+    padding: 0.5rem .75rem;
+    margin: 0.2rem 0.5rem;
+    @media screen and (max-width: @sm) {
+        width: 100%;
+        margin: 0.2rem 0;
+    }
+}
+
+select {
+    cursor: pointer;
+}
+
+.container {
+    margin: 0 20rem;
+    @media screen and (max-width: @xxl) {
+        margin: 0 15rem;
+    }
+
+    @media screen and (max-width: @xl) {
+        margin: 0 10rem;
+    }
+
+    @media screen and (max-width: @lg) {
+        margin: 0 5rem;
+    }
+
+    @media screen and (max-width: @sm) {
+        margin: 0 1rem;
+    }
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+.flex {
+    display: flex;
+}
+
+.btn {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    padding-top: 0.50rem;
+    padding-bottom: 0.50rem;
+    color: white;
+    border-style: none;
+    border-radius: 0.25rem;
+    background-color: #colors[primary-700];
+    &:hover {
+        background-color: #colors[primary-600];
+        box-shadow: 0 .5rem 1rem rgba(#000, .15);
+        cursor: pointer;
+    }
+    @media screen and (max-width: @sm) {
+        width: 100%;
+    }
+}
+
+.VuePagination{
+    .pagination{
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        >.page-item {
+            margin: 2px 2px;
+            border: none;
+            border-radius: 0.25rem;
+            .active {
+                border: solid 0;
+                color: white;
+                background-color: #227694;;
+            }
+            >button {
+                padding: 0.25rem 0.75rem;
+                display: block;
+                background-color: white;
+                border-radius: 0.25rem;
+                border: none;
+                cursor: pointer;
+                &:hover {
+                    color: white;
+                    background-color: #colors[primary-400];
+                }
+            }
+        }
+
+    }
+}
+
+.loading {
+    width: 100%;
+    min-height: 50vh;
+    position: relative;
+   >div{
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        border-top: solid 1px;
+        border-radius: 99999px;
+        animation: spin 1s linear infinite;
+        width: 3rem;
+        height: 3rem;
+        @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+        }
+   }
+}
